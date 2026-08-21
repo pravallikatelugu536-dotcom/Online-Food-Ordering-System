@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platera — Food, made simple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="site-shell">
+    <header class="topbar">
+      <a href="#home" class="brand" aria-label="Platera home"><span class="brand-mark">P</span><span>platera</span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="active" href="#home">Discover</a><a href="#restaurants">Restaurants</a><a href="#how-it-works">How it works</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="location-button" id="locationButton" aria-label="Set delivery location"><span>⌖</span><span class="location-text">Bengaluru</span></button>
+        <button class="icon-button" id="cartButton" aria-label="Open basket"><span class="bag-icon">♧</span><span class="cart-count" id="cartCount">0</span></button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+      </div>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">THE GOOD STUFF, DELIVERED</p>
+          <h1>What are you<br /><em>craving?</em></h1>
+          <p class="hero-text">From neighborhood favourites to something new — your next great meal is only a few taps away.</p>
+          <form class="search-box" id="searchForm">
+            <span class="search-icon">⌕</span>
+            <input id="foodSearch" type="search" placeholder="Search for dishes, cuisines or restaurants" aria-label="Search food" />
+            <button type="submit">Search</button>
+          </form>
+          <div class="hero-meta"><span><i>✓</i> 4.8 average rating</span><span><i>✓</i> 30 min delivery</span></div>
+        </div>
+        <div class="hero-art" aria-label="Colourful platter of food">
+          <div class="sun-shape"></div>
+          <img class="hero-bowl" src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=90" alt="A colourful bowl of fresh food" />
+          <div class="float-card rating-card"><span class="heart">♥</span><span><b>4.9</b><small>Customer love</small></span></div>
+          <div class="float-card time-card"><span class="clock">◷</span><span><b>25–30 min</b><small>Delivery time</small></span></div>
+          <span class="leaf leaf-one">❋</span><span class="leaf leaf-two">✦</span>
+        </div>
+      </section>
+
+      <section class="categories" aria-labelledby="categories-title">
+        <div class="section-heading"><div><p class="eyebrow">EXPLORE BY MOOD</p><h2 id="categories-title">Your table is waiting</h2></div><button class="text-button" id="allCuisines">View all <span>→</span></button></div>
+        <div class="category-row">
+          <button class="category active" data-category="All"><span class="category-emoji">✦</span><span>All</span></button>
+          <button class="category" data-category="Indian"><span class="category-emoji">🍛</span><span>Indian</span></button>
+          <button class="category" data-category="Italian"><span class="category-emoji">🍝</span><span>Italian</span></button>
+          <button class="category" data-category="Asian"><span class="category-emoji">🍜</span><span>Asian</span></button>
+          <button class="category" data-category="Burgers"><span class="category-emoji">🍔</span><span>Burgers</span></button>
+          <button class="category" data-category="Desserts"><span class="category-emoji">🍰</span><span>Desserts</span></button>
+          <button class="category" data-category="Healthy"><span class="category-emoji">🥗</span><span>Healthy</span></button>
+        </div>
+      </section>
+
+      <section class="restaurants" id="restaurants" aria-labelledby="restaurant-title">
+        <div class="section-heading"><div><p class="eyebrow">PICKED FOR YOU</p><h2 id="restaurant-title">A little bit of everything</h2></div><div class="slider-buttons"><button class="round-button" id="prevRestaurant" aria-label="Previous restaurants">←</button><button class="round-button" id="nextRestaurant" aria-label="Next restaurants">→</button></div></div>
+        <div class="restaurant-grid" id="restaurantGrid"></div>
+      </section>
+
+      <section class="offer-banner" id="how-it-works">
+        <div class="offer-copy"><p class="eyebrow">FIRST ORDER TREAT</p><h2>Good food tastes<br />better with <em>20% off.</em></h2><p>Use code <b>HELLOPLATERA</b> at checkout. New customers only.</p><button class="light-button" id="offerButton">Claim offer <span>→</span></button></div>
+        <div class="offer-art"><div class="offer-orb orb-one"></div><div class="offer-orb orb-two"></div><img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=650&q=85" alt="Fresh pizza" /><span class="offer-sticker">YUM<br />YUM</span></div>
+      </section>
+    </main>
+
+    <footer><a class="brand" href="#home"><span class="brand-mark">P</span><span>platera</span></a><p>Food that makes you feel good.</p><span>© 2026 Platera</span></footer>
+  </div>
+
+  <aside class="cart-panel" id="cartPanel" aria-label="Your basket" aria-hidden="true"><div class="cart-header"><div><p class="eyebrow">YOUR ORDER</p><h2>Basket</h2></div><button class="close-cart" id="closeCart" aria-label="Close basket">×</button></div><div class="cart-items" id="cartItems"><div class="empty-cart"><span>☕</span><p>Your basket is empty.</p><small>Add something delicious to get started.</small></div></div><div class="cart-summary" id="cartSummary" hidden><div><span>Subtotal</span><b id="subtotal">₹0</b></div><div><span>Delivery</span><b>₹39</b></div><div class="total"><span>Total</span><b id="total">₹39</b></div><button class="checkout-button" id="checkoutButton">Go to checkout <span>→</span></button></div></aside>
+  <div class="overlay" id="overlay"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
